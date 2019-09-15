@@ -1,11 +1,10 @@
-import org.springframework.cglib.proxy.Enhancer;
-import org.springframework.cglib.proxy.MethodInterceptor;
+import rss.EntityRss;
+import rss.GenerateRssRouter;
 
 public class Main {
 
-    public static void main(String[] args) {
-        MethodInterceptor handler = new Interceptor();
-        Entity entityProxy = (Entity) Enhancer.create(Entity.class,handler);
-        System.out.println(entityProxy.getName());
+        public static void main(String[] args) throws Exception {
+            EntityRss entityRss = new EntityRss();
+            new GenerateRssRouter().generateRssRouter(entityRss);
     }
 }
